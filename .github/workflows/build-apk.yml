@@ -1,17 +1,5 @@
 
-name: Build My Goal Tracker APK
-
-on:
-  push:
-    branches: [ "main", "master" ]
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
+actions/checkout@v4
 
       - name: Set up Java 17
         uses: actions/setup-java@v3
@@ -24,6 +12,3 @@ jobs:
 
       - name: Accept Android Licenses
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
-
-      - name: Build APK
-        run: ./gradlew assembleDebug

@@ -1,10 +1,4 @@
-
-name: Build My Goal Tracker APK
-
-on:
-  push:
-    branches: [ "main", "master" ]
-  workflow_dispatch:
+workflow_dispatch:
 
 jobs:
   build:
